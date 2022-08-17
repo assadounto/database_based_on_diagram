@@ -9,7 +9,7 @@ This a database in PostgreSQL based on diagram below.
 
 This repository includes files with plain SQL that can be used to recreate a database:
 
-- Use [schema_based_on_diagram.sql](./schema.sql) to create all tables.
+- Use [schema_based_on_diagram.sql](./schema_based_on_diagram.sql) to create all tables.
 
 
 ## Authors
