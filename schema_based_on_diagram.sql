@@ -10,7 +10,7 @@ CREATE TABLE medical_histories(
     admitted_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL,
     patient_id INTEGER NOT NULL,
     status VARCHAR(255) NOT NULL,
-    PRIMARY KEY(id);
+    PRIMARY KEY(id);    
 );
 
 CREATE TABLE invoices(
@@ -27,6 +27,11 @@ CREATE TABLE treatments(
     type VARCHAR(255) NOT NULL,
     name VARCHAR(255) NOT NULL,
     PRIMARY KEY(id);
+);
+
+CREATE TABLE treatments_medical_histories(
+    treatment_id INTEGER NOT NULL,
+    medical_history_id INTEGER NOT NULL;
 );
 
 CREATE TABLE invioce_items(
@@ -47,3 +52,11 @@ ALTER TABLE
     medical_histories ADD CONSTRAINT medical_histories_patient_id_foreign FOREIGN KEY(patient_id) REFERENCES patients(id);
 ALTER TABLE
     invioce_items ADD CONSTRAINT invioce_items_treatment_foreign FOREIGN KEY(treatment_id) REFERENCES treatments(id);
+
+ALTER Table
+    treatments_medical_histories ADD CONSTRAINT treatments_treatment_id_foreign FOREIGN KEY(treatment_id) REFERENCES treatments(id);
+    
+ALTER Table
+    treatments_medical_histories ADD CONSTRAINT medical_histories_medical_history_id_foreign FOREIGN KEY(medical_history_id) REFERENCES medical_histories(id);
+
+
