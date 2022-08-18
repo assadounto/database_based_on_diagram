@@ -60,3 +60,9 @@ ALTER Table
     treatments_medical_histories ADD CONSTRAINT medical_histories_medical_history_id_foreign FOREIGN KEY(medical_history_id) REFERENCES medical_histories(id);
 
 
+CREATE INDEX ON medical_histories(patient_id);
+CREATE INDEX ON invoices(medical_history_id);
+CREATE INDEX ON treatments_medical_histories(treatment_id);
+CREATE INDEX ON treatments_medical_histories(medical_history_id);
+CREATE INDEX ON invioce_items(invoice_id);
+CREATE INDEX ON invioce_items(treatment_id);
